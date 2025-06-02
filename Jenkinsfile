@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('continuous download') {
+            steps {
+                echo 'echo downloading in progress'
+                 git branch: 'main', url: 'https://github.com/nedezeh/web-application.git'
+            }
+        }
+        stage('continuous build') {
+            steps {
+                echo 'echo building in progress'
+                 sh 'mvn clean install'
+            }
+        }
+        stage('continuous deployment') {
+            steps {
+                echo 'echo downloying application'
+                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://98.80.220.227:8080')], contextPath: 'my-webapp', war: '**/*.war'
+            }
+        }
+    }
+}
