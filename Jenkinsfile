@@ -23,7 +23,7 @@ pipeline {
         stage('continuous deployment') {
             steps {
                 echo 'echo deploying application to TESTING'
-                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://98.80.220.227:8080')], contextPath: 'my-webapp', war: '**/*.war'
+                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://34.236.171.35:8080')], contextPath: 'my-webapp', war: '**/*.war'
             }
         }
     }
