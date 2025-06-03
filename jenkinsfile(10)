@@ -14,5 +14,16 @@ pipeline {
                  sh 'mvn clean install'
             }
         }
+        stage('wait on approval') {
+            steps {
+                input cancel: 'decline', message: 'proceed to deployment after approval ', ok: 'approve'
+            }
+        }
+        stage('continuous deployment') {
+            steps {
+                echo 'echo downloying application'
+                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://98.80.220.227:8080')], contextPath: 'my-webapp', war: '**/*.war'
+            }
+        }
     }
 }
