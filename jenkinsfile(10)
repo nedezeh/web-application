@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('continuous download') {
+            steps {
+                echo 'echo downloading in progress'
+                 git branch: 'main', url: 'https://github.com/nedezeh/web-application.git'
+            }
+        }
+        stage('continuous build') {
+            steps {
+                echo 'echo building in progress'
+                 sh 'mvn clean install'
+            }
+        }
+    }
+}
