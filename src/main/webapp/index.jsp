@@ -4,7 +4,7 @@
     <title>My First love WebApp</title>
 </head>
 <body>
-    <h1>Welcome to Magno Ezeh’s WebApp</h1>
+    <h1>Welcome to Magno  WebApp</h1>
     <h2>This page is deployed on Tomcat</h2>
     <h3>Using Jenkins CI/CD Pipeline</h3>
 </body>
