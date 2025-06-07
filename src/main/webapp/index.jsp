@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My First WebApp</title>
+    <title>My First love WebApp</title>
 </head>
 <body>
     <h1>Welcome to Ned Ezeh’s WebApp</h1>
