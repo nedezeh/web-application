@@ -17,13 +17,13 @@ pipeline {
         stage('continuous deployment P') {
             steps {
                 echo 'echo deploying application to PRODUCTION'
-                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://98.80.220.227:8080')], contextPath: 'my-webapp', war: '**/*.war'
+                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://44.192.93.77:8080')], contextPath: 'my-webapp', war: '**/*.war'
             }
         }
         stage('continuous deployment T') {
             steps {
                 echo 'echo deploying application to TESTING'
-                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://34.236.171.35:8080')], contextPath: 'my-webapp', war: '**/*.war'
+                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://3.234.242.57:8080')], contextPath: 'my-webapp', war: '**/*.war'
             }
         }
     }
