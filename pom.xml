@@ -9,9 +9,17 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <!-- ✅ Added for Nexus deployment -->
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://3.229.122.61:8081/repository/maven-releases100/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
-            <!-- Compiler Plugin (optional here since we don't use Java code yet) -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -22,7 +30,7 @@
                 </configuration>
             </plugin>
 
-            <!-- WAR Plugin (tells Maven to build a .war file) -->
+            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -31,5 +39,4 @@
         </plugins>
     </build>
 
-</project> 
-
+</project>
